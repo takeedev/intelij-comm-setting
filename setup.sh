@@ -4,7 +4,7 @@ config_path_last_version=$(ls -d $HOME/AppData/Roaming/JetBrains/IdeaIC* | sort 
 echo "Latest version: $config_path_last_version"
 
 options_path=$config_path_last_version/options_test
-makDir -p $options_path
+mkdir -p $options_path
 # config
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/options/colors.scheme.xml -o "$options_path/colors.scheme.xml"
 status1=$?
@@ -23,7 +23,7 @@ status7=$?
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/options/ui.lnf.xml -o "$options_path/ui.lnf.xml"
 
 template_path=$config_path_last_version/templates_test
-makDir -p $template_path
+mkdir -p $template_path
 # template
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/templates/Java.xml -o "$template_path/Java.xml"
 status8=$?
@@ -42,4 +42,4 @@ else
     [ $status8 -ne 0 ] && echo "Java.xml download failed!"
 fi
 
-curl -s https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/install-plugin.sh | /usr/bin/env sh
+# curl -s https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/install-plugin.sh | /usr/bin/env sh
