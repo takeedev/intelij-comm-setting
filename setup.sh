@@ -4,6 +4,7 @@ config_path_last_version=$(ls -d $HOME/AppData/Roaming/JetBrains/IdeaIC* | sort 
 echo "Latest version: $config_path_last_version"
 
 options_path=$config_path_last_version/options_test
+echo "$options_path"
 mkdir -p $options_path
 # config
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/options/colors.scheme.xml -o "$options_path/colors.scheme.xml"
