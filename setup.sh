@@ -1,9 +1,6 @@
-config_path_last_version=$(ls -d /mnt/c/Users/USER/AppData/Roaming/JetBrains/IdeaIC* | sort -V | tail -n 1)
+#!/usr/bin/env sh
+
+config_path_last_version=$(ls -d $HOME/AppData/Roaming/JetBrains/IdeaIC* | sort -V | tail -n 1)
 echo "Latest version: $config_path_last_version"
 
-cp testfile.sh $config_path_last_version/options
-
-for check in $config_path_last_version/options/testfi*
-do
-echo "Check file copy : $check"
-done
+curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/options/editor.xml -o "$config_path_last_version/options/editor_Test_Git.xml"
