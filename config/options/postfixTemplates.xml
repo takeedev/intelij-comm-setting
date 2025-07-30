@@ -4,7 +4,7 @@
       <conditions>
         <condition id="void" />
       </conditions>
-      <template name="fakeKey" value="@Test&#10;void $EXPR$() {&#10;    &#10;}" toReformat="true" toShortenFQNames="true" />
+      <template name="fakeKey" value="@Test&#10;void $EXPR$() {&#10;    &#10;}" description="" toReformat="true" toShortenFQNames="true" />
     </template>
   </component>
 </application>
