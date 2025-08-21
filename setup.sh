@@ -29,7 +29,12 @@ mkdir -p $template_path
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/templates/Java.xml -o "$template_path/Java.xml"
 status8=$?
 
-if [ $status1 -eq 0 ] && [ $status2 -eq 0 ] && [ $status3 -eq 0 ] && [ $status4 -eq 0 ] && [ $status5 -eq 0 ] && [ $status6 -eq 0 ] && [ $status7 -eq 0 ] && [ $status8 -eq 0 ]; then
+keymap=$config_path_last_version/keymaps
+#keymap
+curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/keymaps/'Windows copy.xml' -o "$keymap/Java.xml"
+status9=$?
+
+if [ $status1 -eq 0 ] && [ $status2 -eq 0 ] && [ $status3 -eq 0 ] && [ $status4 -eq 0 ] && [ $status5 -eq 0 ] && [ $status6 -eq 0 ] && [ $status7 -eq 0 ] && [ $status8 -eq 0 ] && [ $status9 -eq 0 ]; then
     echo "All downloads successful!"
 else
     echo "One or more downloads failed!"
@@ -41,6 +46,8 @@ else
     [ $status6 -ne 0 ] && echo "templates.xml download failed!"
     [ $status7 -ne 0 ] && echo "ui.lnf.xml download failed!"
     [ $status8 -ne 0 ] && echo "Java.xml download failed!"
+    [ $status8 -ne 0 ] && echo "Windows copy.xml download failed!"
+
 fi
 
 # curl -s https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/install-plugin.sh | /usr/bin/env sh
