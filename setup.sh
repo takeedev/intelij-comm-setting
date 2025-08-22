@@ -33,7 +33,7 @@ status8=$?
 echo "start keymaps"
 keymap=$config_path_last_version/keymaps
 #keymap
-mkdir -p keymap
+mkdir -p $keymap
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/keymaps/Windows%20copy.xml -o "$keymap/Windows copy.xml"
 status9=$?
 
