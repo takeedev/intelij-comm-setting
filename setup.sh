@@ -3,7 +3,7 @@
 config_path_last_version=$(ls -d "$HOME/AppData/Roaming/JetBrains/"{IdeaI*,IntelliJIdea*} 2>/dev/null | sort -V | tail -n 1)
 echo "Latest version: $config_path_last_version"
 
-options_path="$config_path_last_version"/options
+options_path="$config_path_last_version/options"
 echo "$options_path"
 mkdir -p $options_path
 # config
