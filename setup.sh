@@ -34,7 +34,7 @@ echo "start keymaps"
 keymap=$config_path_last_version/keymaps
 #keymap
 mkdir -p keymap
-curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/keymaps/'Windows copy.xml' -o "$keymap/Java.xml"
+curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/keymaps/Windows%20copy.xml -o "$keymap/Java.xml"
 status9=$?
 
 if [ $status1 -eq 0 ] && [ $status2 -eq 0 ] && [ $status3 -eq 0 ] && [ $status4 -eq 0 ] && [ $status5 -eq 0 ] && [ $status6 -eq 0 ] && [ $status7 -eq 0 ] && [ $status8 -eq 0 ] && [ $status9 -eq 0 ]; then
