@@ -31,6 +31,7 @@ status8=$?
 
 keymap=$config_path_last_version/keymaps
 #keymap
+mkdir keymap
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/keymaps/'Windows copy.xml' -o "$keymap/Java.xml"
 status9=$?
 
