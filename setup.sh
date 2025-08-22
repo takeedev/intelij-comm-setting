@@ -29,7 +29,7 @@ mkdir -p $template_path
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/templates/Java.xml -o "$template_path/Java.xml"
 status8=$?
 
-keymap="$config_path_last_version"/keymaps
+keymap="$config_path_last_version/keymaps"
 #keymap
 mkdir -p keymap
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/keymaps/'Windows copy.xml' -o "$keymap/Java.xml"
