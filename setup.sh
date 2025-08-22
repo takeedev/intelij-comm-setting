@@ -5,10 +5,6 @@ echo "Latest version: $config_path_last_version"
 
 options_path=$config_path_last_version/options
 echo "$options_path"
-if [ -z "$option_path"]; then
- echo "is not option folder"
- exit 1
-fi
 mkdir -p $options_path
 # config
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/options/colors.scheme.xml -o "$options_path/colors.scheme.xml"
