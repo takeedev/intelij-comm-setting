@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-config_path_last_version=$(ls -d $HOME/AppData/Roaming/JetBrains/IdeaIC* | sort -V | tail -n 1)
+config_path_last_version=$(ls -d "$HOME/AppData/Roaming/JetBrains/"{IdeaIC*,IntellijIdea*} 2>/dev/null | sort -V | tail -n 1)
 echo "Latest version: $config_path_last_version"
 
 options_path=$config_path_last_version/options
