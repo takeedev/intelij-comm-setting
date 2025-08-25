@@ -22,24 +22,25 @@ status6=$?
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/options/templates.xml -o "$options_path/templates.xml"
 status7=$?
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/options/ui.lnf.xml -o "$options_path/ui.lnf.xml"
+status8=$?
 
 echo "start template"
 template_path=$config_path_last_version/templates
 mkdir -p $template_path
 # template
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/templates/Java.xml -o "$template_path/Java.xml"
-status8=$?
+status9=$?
 
 echo "start keymaps"
 keymap=$config_path_last_version/keymaps
 #keymap
 mkdir -p $keymap
-echo "directory $keymap"
+echo $keymap
 ls -ld "$keymap"
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/keymaps/Windows%20copy.xml -o "$keymap/Windows copy.xml"
-status9=$?
+status10=$?
 
-if [ $status1 -eq 0 ] && [ $status2 -eq 0 ] && [ $status3 -eq 0 ] && [ $status4 -eq 0 ] && [ $status5 -eq 0 ] && [ $status6 -eq 0 ] && [ $status7 -eq 0 ] && [ $status8 -eq 0 ] && [ $status9 -eq 0 ]; then
+if [ $status1 -eq 0 ] && [ $status2 -eq 0 ] && [ $status3 -eq 0 ] && [ $status4 -eq 0 ] && [ $status5 -eq 0 ] && [ $status6 -eq 0 ] && [ $status7 -eq 0 ] && [ $status8 -eq 0 ] && [ $status9 -eq 0 ] && [ $status10 -eq 0 ]; then
     echo "All downloads successful!"
 else
     echo "One or more downloads failed!"
