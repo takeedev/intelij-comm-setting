@@ -1,12 +1,22 @@
 <keymap version="1" name="Windows copy" parent="$default">
   <action id="ActivateBookmarksToolWindow" />
+  <action id="ActivateFindToolWindow" />
   <action id="ActivateMavenToolWindow">
     <keyboard-shortcut first-keystroke="alt 2" />
+  </action>
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="alt 3" />
+  </action>
+  <action id="ToggleZenMode">
+    <keyboard-shortcut first-keystroke="shift slash" />
   </action>
   <action id="ViewToolBar">
     <keyboard-shortcut first-keystroke="shift alt 2" />
   </action>
   <action id="ViewToolButtons">
     <keyboard-shortcut first-keystroke="shift alt 1" />
+  </action>
+  <action id="VimPluginToggle">
+    <keyboard-shortcut first-keystroke="shift alt v" />
   </action>
 </keymap>
