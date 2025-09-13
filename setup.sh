@@ -62,4 +62,4 @@ else
     [ $status11 -ne 0 ] && echo "Windows copy.xml download failed!"
 fi
 
-# curl -s https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/install-plugin.sh | /usr/bin/env sh
+ curl -s https://raw.githubusercontent.com/takeedev/intelij-comm-setting/refs/heads/main/plugin.sh | /usr/bin/env sh
