@@ -36,4 +36,24 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="restGet" value="@GetMapping(&quot;$PATH$&quot;)&#10;public ResponseEntity&lt;$TYPE$&gt; $METHOD$(@PathVariable $IDTYPE$ id) {&#10;    $END$&#10;    return ResponseEntity.ok($BODY$);&#10;}" description="get mapping" toReformat="false" toShortenFQNames="true">
+    <variable name="PATH" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="IDTYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="BODY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="restPost" value="@PostMapping(&quot;$PATH$&quot;)&#10;public ResponseEntity&lt;$RESP$&gt; $METHOD$(@Valid @RequestBody $REQ$ req) {&#10;    $END$&#10;    return ResponseEntity.status(HttpStatus.CREATED).body($BODY$);&#10;}" description="post maping" toReformat="false" toShortenFQNames="true">
+    <variable name="PATH" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RESP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="REQ" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="BODY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
