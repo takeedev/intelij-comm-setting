@@ -56,4 +56,21 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="mock" value="when($MOCK$.$CALL$($ARGS$)).thenReturn($RET$);&#10;&#10;var actual = $SUT$.$CALL$($ARGS$);&#10;&#10;verify($MOCK$).$CALL$($ARGS$);&#10;Assertions.assertEquals($RET$, actual);&#10;$END$" description="mockito unit test" toReformat="false" toShortenFQNames="true" useStaticImport="true">
+    <variable name="MOCK" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CALL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RET" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="opt" value="var v = Optional.ofNullable($VAL$)&#10;        .orElseThrow(() -&gt; new IllegalArgumentException(&quot;$MSG$&quot;));&#10;$END$" description="Optional Line" toReformat="false" toShortenFQNames="true" useStaticImport="true">
+    <variable name="VAL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MSG" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
