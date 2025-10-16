@@ -14,7 +14,7 @@ fi
 "$cmd" $extra installPlugins \
   "Key Promoter X" \
   org.sonarlint.idea \
-  "Lombook Plugin" \
+  "Lombok Plugin" \
   IdeaVIM \
   com.mallowigi \
   mobi.hsz.idea.gitignore \
