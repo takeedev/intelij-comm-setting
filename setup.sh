@@ -69,5 +69,3 @@ else
     [ $status12 -ne 0 ] && echo "Java.xml download failed"
     [ $status13 -ne 0 ] && echo "Windows copy.xml download failed!"
 fi
-
- curl -s https://raw.githubusercontent.com/takeedev/intelij-comm-setting/refs/heads/main/plugin.sh | /usr/bin/env sh
