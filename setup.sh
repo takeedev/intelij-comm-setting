@@ -1,6 +1,12 @@
 #!/usr/bin/env sh
 
-config_path_last_version=$(ls -d "$HOME/AppData/Roaming/JetBrains/"{IdeaI*,IntelliJIdea*} 2>/dev/null | sort -V | tail -n 1)
+config_path_last_version=$(
+  ls -d \
+    "$HOME/AppData/Roaming/JetBrains/"{IdeaI*,IntelliJIdea*} \
+    "$HOME/Library/Application Support/JetBrains/"{IdeaI*,IntelliJIdea*} \
+    2>/dev/null | sort -V | tail -n 1
+)
+
 echo "Latest version: $config_path_last_version"
 
 options_path=$config_path_last_version/options
@@ -33,12 +39,17 @@ mkdir -p $path_windows
 curl -k https://raw.githubusercontent.com/takeedev/intelij-comm-setting/refs/heads/main/config/options/windows/keymap.xml -o "$path_windows/keymap.xml"
 status11=$?
 
+path_mac=$options_path/mac
+mkdir -p $path_mac
+curl -k https://raw.githubusercontent.com/takeedev/intelij-comm-setting/refs/heads/main/config/options/mac/keymap.xml -o "$path_mac/keymap.xml"
+status12=$?
+
 echo "start template"
 template_path=$config_path_last_version/templates
 mkdir -p $template_path
 # template
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/templates/Java.xml -o "$template_path/Java.xml"
-status12=$?
+status13=$?
 
 echo "start keymaps"
 keymap=$config_path_last_version/keymaps
@@ -47,11 +58,11 @@ mkdir -p $keymap
 echo $keymap
 ls -ld "$keymap"
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/keymaps/Windows%20copy.xml -o "$keymap/Windows copy.xml"
-status13=$?
+status14=$?
 
 if [ $status1 -eq 0 ] && [ $status2 -eq 0 ] && [ $status3 -eq 0 ] && [ $status4 -eq 0 ] && [ $status5 -eq 0 ] \
  && [ $status6 -eq 0 ] && [ $status7 -eq 0 ] && [ $status8 -eq 0 ] && [ $status9 -eq 0 ] && [ $status10 -eq 0 ] \
- && [ $status11 -eq 0 ] && [ $status12 -eq 0 ] && [ $status13 -eq 0 ]; then
+ && [ $status11 -eq 0 ] && [ $status12 -eq 0 ] && [ $status13 -eq 0 ] && [ $status14 -eq 0 ]; then
     echo "All downloads successful!"
 else
     echo "One or more downloads failed!"
@@ -65,7 +76,8 @@ else
     [ $status8 -ne 0 ] && echo "ui.lnf.xml download failed!"
     [ $status9 -ne 0 ] && echo "terminal.xml download failed!"
     [ $status10 -ne 0 ] && echo "terminal-font.xml download failed!"
-    [ $status11 -ne 0 ] && echo "keymap.xml download failed!"
-    [ $status12 -ne 0 ] && echo "Java.xml download failed"
-    [ $status13 -ne 0 ] && echo "Windows copy.xml download failed!"
+    [ $status11 -ne 0 ] && echo "keymap.xml windows download failed!"
+    [ $status12 -ne 0 ] && echo "keymap.xml mac download failed!"
+    [ $status13 -ne 0 ] && echo "Java.xml download failed"
+    [ $status14 -ne 0 ] && echo "Windows copy.xml download failed!"
 fi
