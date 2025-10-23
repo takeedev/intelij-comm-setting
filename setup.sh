@@ -11,7 +11,7 @@ echo "Latest version: $config_path_last_version"
 
 options_path=$config_path_last_version/options
 echo "$options_path"
-mkdir -p $options_path
+mkdir -p "$options_path"
 ################################################################### config ##################################################################
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/options/colors.scheme.xml -o "$options_path/colors.scheme.xml"
 status1=$?
@@ -40,13 +40,13 @@ curl -k https://raw.githubusercontent.com/takeedev/intelij-comm-setting/refs/hea
 status11=$?
 
 path_mac=$options_path/mac
-mkdir -p $path_mac
+mkdir -p "$path_mac"
 curl -k https://raw.githubusercontent.com/takeedev/intelij-comm-setting/refs/heads/main/config/options/mac/keymap.xml -o "$path_mac/keymap.xml"
 status12=$?
 
 echo "start template"
 template_path=$config_path_last_version/templates
-mkdir -p $template_path
+mkdir -p "$template_path"
 # template
 curl -k https://raw.githubusercontent.com/takeedev/setting-intelij-comm/refs/heads/main/config/templates/Java.xml -o "$template_path/Java.xml"
 status13=$?
