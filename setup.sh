@@ -3,7 +3,7 @@
 config_path_last_version=$(
   ls -d \
     "$HOME/AppData/Roaming/JetBrains/"{IdeaI*,IntelliJIdea*} \
-    "$HOME/Library/Application\ Support/JetBrains/"{IdeaI*,IntelliJIdea*} \
+    "$HOME"/Library/Application\ Support/JetBrains/"{IdeaI*,IntelliJIdea*} \
     2>/dev/null | sort -V | tail -n 1
 )
 
